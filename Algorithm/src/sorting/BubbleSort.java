@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 /**
  * [累己磊]
- * 辫刮林
+ * minju Kim
  * 
  * [累己老]
  * 2017.06.05

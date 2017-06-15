@@ -1,4 +1,4 @@
-package sorting;
+package theory.sorting;
 
 import java.util.Scanner;
 
@@ -9,15 +9,15 @@ import java.util.Scanner;
  * [작성일]
  * 2017.06.05
  * 
- * [Bubble Sort]
- * 인접한 두 수를 비교하여 큰 수를 뒤로 보내는 간단한 정렬 알고리즘
+ * [Insertion Sort]
+ * 배열의 모든 요소를 앞에서부터 차례대로 이미 정렬된 배열 부분과 비교하여 자신의 위치를 찾아 삽입하는 정렬 알고리즘
  * 
  * [시간 복잡도]
- * 전체 원소의 개수가 n이라고 할 때, 총 비교 횟수는 (n-1) + (n-2) + ... + 1
+ * 전체 원소의 개수가 n이라고 할 때, 총 비교 횟수는 1 + 2 + ... + (n-1)
  * O(n^2)
  * */
 
-public class BubbleSort {
+public class InsertionSort {
 
 	public static void main(String[] args) {
 		
@@ -36,15 +36,15 @@ public class BubbleSort {
 		//크기 비교를 위해 임시 저장 변수 생성
 		int temp = 0;
 		
-		for(int i = 0; i < n; i++) {
-			for(int j = 1; j < n-i; j++) {
+		for(int i = 1; i < n; i++) {
+			for(int j = i; j > 0; j--) {
 				if(data[j-1] > data[j]) {
 					temp = data[j];
 					data[j] = data[j-1];
 					data[j-1] = temp;
-				}
+				} else break;
+				//왼쪽은 이미 정렬되어 있기 때문에 바로 전 요소보다 큰 경우에는 바로 루프 탈출
 			}
-			//한 바퀴 돌 때마다 가장 큰 수가 오른쪽에 채워지기 때문에 이후에는 비교 대상에서 제외
 		}
 		for(int i = 0; i < n; i++) {
 			System.out.println(data[i]);

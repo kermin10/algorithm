@@ -1,4 +1,4 @@
-package sorting;
+package theory.sorting;
 
 import java.util.Scanner;
 
